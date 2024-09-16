@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trying</title>
+    <script>
+        function Leitura(){
+            var nome = document.getElementById("Nome_id").required = true; 
+
+            console.log("Nome: " + nome);
+        }
+    </script>
+</head>
+<body>
+    <h3>Insira seus dados</h3>
+<form onsubmit= "event.preventDefault(); Leitura();">
+<label for = "Nome_id"> Nome:</label><br>
+<input type = "text" id = "Nome_id" name = "dados"><br>
+
+<label for = "Email_id">Email:</label><br>
+<input type = "email" id = "Email_id" name = "dados"><br>
+
+<label for = "Pass_id"> Senha:</label><br>
+<input type = "password" id = "Pass_id" name = "dados"><br>
+
+<label for = "Pass2_id"> Confirme Sua Senha:</label><br>
+<input type = "password" id = "Pass2_id" name = "dados"><br>
+
+<label for = "Data_id"> Data de nascimento:</label><br>
+<input type = "date" id = "Data_id" name = "dados"><br>
+
+<h4> Genêro: </h4>
+<label for = "Gender_id"> Macho</label>
+<input type = "radio" id = "Gender_id" name = "dados" value = "Macho"><br>
+
+
+<label for = "Gender2_id"> Muié </label>
+<input type = "radio" id = "Gender2_id" name = "dados" value = "Muié"><br>
+
+
+<label for = "Gender3_id"> Outros </label>
+<input type = "radio" id = "Gender3_id" name = "dados" value = "Outros"><br>
+
+<button type="submit">Enviar</button>
+
+</form>
+    
+</body>
+</html>

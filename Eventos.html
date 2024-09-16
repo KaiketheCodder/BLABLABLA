@@ -47,7 +47,7 @@
         }
 
         // Evento de carregamento da página
-        window.addEventListener('load', () => logEvent('load'));
+        window.addEventListener('load', () => logEvent('load'));//O () => siginifica que estamos chamando a função logEvent que criamos antes e usando ela para criar uma nova função sem nome, que só é usada aqui. 
 
         // Evento de redimensionamento da janela
         window.addEventListener('resize', () => logEvent('resize'));
