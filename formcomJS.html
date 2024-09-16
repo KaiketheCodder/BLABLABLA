@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com JavaScript</title>
+    <script>
+        function lerFormulario() {
+            // Obtendo os valores inseridos no formulário
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var mensagem = document.getElementById("mensagem").value;
+            
+            // Exibindo os valores no console
+            console.log("Nome: " + nome);
+            console.log("Email: " + email);
+            console.log("Mensagem: " + mensagem);
+            
+            // Exibindo os valores na página
+            document.getElementById("resultado").innerHTML = 
+                "<p><strong>Nome:</strong> " + nome + "</p>" +
+                "<p><strong>Email:</strong> " + email + "</p>" +
+                "<p><strong>Mensagem:</strong> " + mensagem + "</p>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulário de Contato</h1>
+    
+    <form onsubmit="event.preventDefault(); lerFormulario();">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" required></textarea><br><br>
+        
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <h2>Resultado</h2>
+    <div id="resultado"></div>
+</body>
+</html>

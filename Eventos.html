@@ -1,0 +1,94 @@
+<!-- Site com todos os eventos: https://en.wikipedia.org/wiki/DOM_event -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Eventos</title>
+    <style>
+        #container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        #inputField {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos em JavaScript</h1>
+
+    <!-- Container para mostrar eventos -->
+    <div id="container">
+        <p>Redimensione a janela, role a página ou interaja com os elementos abaixo:</p>
+
+        <!-- Formulário -->
+        <form id="myForm">
+            <label for="inputField">Digite algo:</label><br>
+            <input type="text" id="inputField" name="inputField"><br><br>
+            <button type="submit">Enviar</button>
+            <button type="reset">Resetar</button>
+        </form>
+
+        <!-- Caixa de seleção -->
+        <select id="mySelect">
+            <option value="1">Opção 1</option>
+            <option value="2">Opção 2</option>
+            <option value="3">Opção 3</option>
+        </select>
+    </div>
+
+    <script>
+        // Função para registrar o evento no console
+        function logEvent(eventType) {
+            console.log(`${eventType} evento detectado.`);
+        }
+
+        // Evento de carregamento da página
+        window.addEventListener('load', () => logEvent('load'));
+
+        // Evento de redimensionamento da janela
+        window.addEventListener('resize', () => logEvent('resize'));
+
+        // Evento de rolagem da página
+        window.addEventListener('scroll', () => logEvent('scroll'));
+
+        // Evento de foco no campo de texto
+        document.getElementById('inputField').addEventListener('focus', () => logEvent('focus'));
+
+        // Evento de perda de foco do campo de texto
+        document.getElementById('inputField').addEventListener('blur', () => logEvent('blur'));
+
+        // Evento de mudança no campo de texto
+        document.getElementById('inputField').addEventListener('change', () => logEvent('change'));
+
+        // Evento de seleção do texto no campo de texto
+        document.getElementById('inputField').addEventListener('select', () => logEvent('select'));
+
+        // Evento de envio do formulário
+        document.getElementById('myForm').addEventListener('submit', (event) => {
+            logEvent('submit');
+            event.preventDefault(); // Evita o envio real do formulário
+        });
+
+        // Evento de reset do formulário
+        document.getElementById('myForm').addEventListener('reset', () => logEvent('reset'));
+
+        // Eventos do mouse
+        document.getElementById('container').addEventListener('mousedown', () => logEvent('mousedown'));
+        document.getElementById('container').addEventListener('mouseup', () => logEvent('mouseup'));
+        document.getElementById('container').addEventListener('click', () => logEvent('click'));
+        document.getElementById('container').addEventListener('dblclick', () => logEvent('dblclick'));
+        document.getElementById('container').addEventListener('mousemove', () => logEvent('mousemove'));
+        document.getElementById('container').addEventListener('mouseover', () => logEvent('mouseover'));
+        document.getElementById('container').addEventListener('mouseout', () => logEvent('mouseout'));
+
+        // Eventos do teclado
+        document.getElementById('inputField').addEventListener('keydown', () => logEvent('keydown'));
+        document.getElementById('inputField').addEventListener('keypress', () => logEvent('keypress'));
+        document.getElementById('inputField').addEventListener('keyup', () => logEvent('keyup'));
+    </script>
+</body>
+</html>
